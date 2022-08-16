@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Weather_Report.Services</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Weather-Report.DataAccess\Weather-Report.DataAccess.csproj" />
+    <ProjectReference Include="..\Weather-Report.Models\Weather-Report.Models.csproj" />
+    <ProjectReference Include="..\Weather-Report.ServiceContracts\Weather-Report.ServiceContracts.csproj" />
+  </ItemGroup>
+
+</Project>

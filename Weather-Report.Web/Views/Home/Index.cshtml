@@ -1,0 +1,53 @@
+﻿@model IList<StationsReport>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFBt-qcF-8aaMP_CMGoUS92IqbApeQxWw&callback=initMap"
+        defer></script>
+
+<div id="map"></div>
+<script>
+    let map;
+    function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 5.3315968, lng: -72.3903875 };
+        // The map, centered at Uluru
+        map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: uluru,
+        });
+    }
+    window.initMap = initMap;
+</script>
+<script>
+    function addMarker(lat, lng, humidity, temp, reportTime){
+        let contentString = 'Humedad: '+humidity+', Temperatura: '+temp+', Fecha: '+reportTime;
+        const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+        });
+
+
+      const marker = new google.maps.Marker({
+        position: {lat: lat, lng:lng},
+        map: map
+      });
+
+      marker.addListener("click", () => {
+            infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+            });
+        });
+
+    }
+</script>
+
+@foreach (var station in Model)
+{
+    <script>
+        window.addEventListener('load', function () {
+            addMarker(@station.lat,@station.lng, @station.Humidity, @station.Temperature, '@station.ReportTimeStr')
+        })
+    </script>
+}
