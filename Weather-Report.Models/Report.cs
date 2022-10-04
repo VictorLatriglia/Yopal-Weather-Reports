@@ -12,7 +12,7 @@ namespace Weather_Report.Models
         public double Temperature { get; set; }
 
         public string StationId { get; set; }
-        public virtual Station Station { get; set; }
+        
 
     }
 }
