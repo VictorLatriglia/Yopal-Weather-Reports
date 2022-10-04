@@ -32,5 +32,12 @@ namespace Weather_Report.Web.Controllers
             var result = await _stationsService.AddStation(station);
             return Ok(result.Id);
         }
+
+        [HttpGet("GetReports")]
+        public async Task<IActionResult> GetReports()
+        {
+            var result = await _stationsService.GetStationsWithReports(false);
+            return Ok(result);
+        }
     }
 }

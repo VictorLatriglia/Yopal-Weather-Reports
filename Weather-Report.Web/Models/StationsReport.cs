@@ -7,6 +7,6 @@
         public double Humidity { get; set; }
         public double Temperature { get; set; }
         public DateTime ReportTime { get; set; }
-        public string ReportTimeStr { get => ReportTime.ToLongTimeString(); }
+        public string ReportTimeStr { get => ReportTime.ToString("dd-MM-yyyy HH:mm:ss"); }
     }
 }
