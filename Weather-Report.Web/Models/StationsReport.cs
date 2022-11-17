@@ -6,6 +6,8 @@
         public double lng { get; set; }
         public double Humidity { get; set; }
         public double Temperature { get; set; }
+        public double Pluviometry { get; set; }
+        public double Luminosity { get; set; }
         public DateTime ReportTime { get; set; }
         public string ReportTimeStr { get => ReportTime.ToString("dd-MM-yyyy HH:mm:ss"); }
     }

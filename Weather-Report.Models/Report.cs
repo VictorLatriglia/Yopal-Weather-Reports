@@ -10,7 +10,8 @@ namespace Weather_Report.Models
     {
         public double Humidity { get; set; }
         public double Temperature { get; set; }
-
+        public double Pluviometry { get; set; }
+        public double Luminosity { get; set; }
         public string StationId { get; set; }
         
 

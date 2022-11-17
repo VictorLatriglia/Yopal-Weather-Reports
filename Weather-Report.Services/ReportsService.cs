@@ -22,7 +22,7 @@ namespace Weather_Report.Services
 
         public async Task<Report> AddReport(StationReport report)
         {
-            return await _reportsRepo.AddAsync(new Report { Humidity = report.Humidity, StationId = report.StationId, Temperature = report.Temperature });
+            return await _reportsRepo.AddAsync(new Report { Humidity = report.Humidity, StationId = report.StationId, Temperature = report.Temperature, Pluviometry = report.Pluviometry, Luminosity = report.Luminosity });
         }
 
 
