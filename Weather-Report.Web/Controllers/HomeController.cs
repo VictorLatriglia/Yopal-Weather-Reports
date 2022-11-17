@@ -28,6 +28,8 @@ namespace Weather_Report.Web.Controllers
                 lng = x.Longitude,
                 Humidity = x.Reports.LastOrDefault()?.Humidity ?? 0,
                 Temperature = x.Reports.LastOrDefault()?.Temperature ?? 0,
+                Pluviometry = x.Reports.LastOrDefault()?.Pluviometry ?? 0,
+                Luminosity = x.Reports.LastOrDefault()?.Luminosity ?? 0,
                 ReportTime = x.Reports.LastOrDefault()?.CreatedOn ?? new DateTime()
             }).ToList() ?? new List<StationsReport>();
             return View(model);
